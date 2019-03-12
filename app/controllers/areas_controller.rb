@@ -14,6 +14,7 @@ class AreasController < ApplicationController
   end
 
   def search
+    
   end
 
   private

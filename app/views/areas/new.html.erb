@@ -1,2 +1,42 @@
-<h1>Areas#new</h1>
-<p>Find me in app/views/areas/new.html.erb</p>
+<div class="col-xs-4 col-xs-offset-4 mt-3">
+  <h2 class="text-center">エリア登録</h2>   
+    <%= form_with model: @area, local: true do |form| %>
+      <div class="form-group">
+        <%= form.label :zipcode %><br>
+        <%= form.text_field :zipcode, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :prefcode %><br>
+        <%= form.text_field :prefcode, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :address1 %><br>
+        <%= form.text_field :address1, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :kana1 %><br>
+        <%= form.text_field :kana1, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :address2 %><br>
+        <%= form.text_field :address2, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :kana2 %><br>
+        <%= form.text_field :kana2, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :address3 %><br>
+        <%= form.text_field :address3, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :kana3 %><br>
+        <%= form.text_field :kana3, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :introduction %><br>
+        <%= form.text_area :introduction, class: "form-control" %>
+      </div>
+      <%= form.submit "登録する", class: "btn btn-primary btn-block" %>
+    <% end %>
+</div>

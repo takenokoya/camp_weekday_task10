@@ -1,31 +1,27 @@
-<table class="table col-12 mt-5 border table-striped">
-  <thead>
-  <tr>
-    <th class="border-right">ID</th>
-    <th class="border-right">ZipCode</th>
-    <th class="border-right">PrefCode</th>
-    <th class="border-right">Address</th>
-    <th class="border-right">Kana</th>
-    <th>Introduction</th>
-  </tr>
-  </thead>
-  <% if @areas.any? %>
-    <% @areas.each do |a| %>
-      <tbody>
+<div class="col-md-12">
+  <table class="table table-bordered table-striped">
+    <thead>
       <tr>
-        <th class="border-right"><%= a.id %></th>
-        <td class="border-right"><%= a.zipcode %></td>
-        <td class="border-right"><%= a.prefcode %></td>
-        <td class="border-right"><%= a.address1 %><%= a.address2 %><%= a.address3 %></td>
-        <td class="border-right"><%= a.kana1 %><%= a.kana2 %><%= a.kana3 %></td>
-        <td><%= a.introduction %></td>
+        <th>ID</th>
+        <th>ZipCode</th>
+        <th>PrefCode</th>
+        <th>Address</th>
+        <th>Kana</th>
+        <th>Introduction</th>
       </tr>
-      </tbody>
-    <% end %>
-  <% else %>
-    <td>
-      <p>まだ登録されていません。</p>
-    </td>
-  <% end %>
-</table>
-<%= link_to "検索する", areas_search_path, class: "btn btn-primary col-12" %>
+    </thead>
+    <tbody>
+      <% @areas.each do |area| %>
+        <tr>
+          <td><%= area.id %></td>
+          <td><%= area.zipcode %></td>
+          <td><%= area.prefcode %></td>
+          <td><%= area.address1 %><%= area.address2 %><%= area.address3 %></td>
+          <td><%= area.kana1 %><%= area.kana2 %><%= area.kana3 %></td>
+          <td><%= area.introduction %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "検索する", areas_search_path, class: "btn btn-primary btn-block mb-5" %>
+</div>

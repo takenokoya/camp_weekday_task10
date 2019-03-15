@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   get 'areas/search' => 'areas#search'
-  resources :areas, :only => [ :index, :new, :create ]
-  root 'areas#search'
+  post 'areas/search' => 'areas#create'
+  root 'areas#index'
 end
